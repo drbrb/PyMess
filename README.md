@@ -1,12 +1,14 @@
 # Welcome to the PyMeSS!
 
-description: 
+##description: 
  Simple chat messenger - training code. Server and client in python. without socket. 
 * Server.py - server chat
 * ClientMess_UI.py - client chat
 * clientui.py - PyQt form for client chat.
 
-dependency pip: server-Flask, client-requests,PyQt5
+##dependency 
+python3
+pip3 install Flask, requests, PyQt5
 
 ***
 
