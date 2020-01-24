@@ -7,8 +7,8 @@
 * clientui.py - PyQt form for client chat.
 
 ## dependency 
-python3
-pip3 install Flask, requests, PyQt5
+* python => 3.6 testing 
+* pip3 install Flask, requests, PyQt5
 
 ***
 
