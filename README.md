@@ -1,4 +1,4 @@
-# Welcome to the PyMeSS wiki!
+# Welcome to the PyMeSS!
 
 description: 
  Simple chat messenger - training code. Server and client in python. without socket. 
