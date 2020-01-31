@@ -4,22 +4,26 @@ import datetime
 
 app = Flask(__name__)
 messages = [
-    {"username": "Jack","text" : "Hello!","time" : time.time()},
-    {"username": "Marry", "text" : "Hello!","time" : time.time()}
+    {"username": "Jack", "text": "Hello!", "time": time.time()},
+    {"username": "Marry", "text": "Hello!", "time": time.time()}
 ]
 users = {
-    "Jack":"12345",
-    "Mary":"12345"
+    "Jack": "12345",
+    "Mary": "12345"
 }
+
 
 @app.route("/")
 def hello_view():
     return "Hello <h1>Welcome to Python messenger!</h1>"
 
+
 @app.route("/status")
 def status_view():
     status = {"status": True, "Datetime": datetime.datetime.now().strftime('%d/%m/%Y %H:%M:%S')}
-    return f'I am live! Status : {status["status"]}, current time: {status["Datetime"]}'
+    return f'I am live! Status : {status["status"]}, ' \
+           f'current time: {status["Datetime"]}'
+
 
 @app.route("/messages")
 def messages_view():
@@ -43,7 +47,7 @@ def messages_view():
     return {'messages': new_messages}
 
 
-@app.route("/send", methods = ['POST'])
+@app.route("/send", methods=['POST'])
 def send():
     """
     Передача сообщения
@@ -58,10 +62,11 @@ def send():
     username = data["username"]
     text = data["text"]
 
-    messages.append({"username": username,"text": text,"time": time.time()})
+    messages.append({"username": username, "text": text, "time": time.time()})
     return {'ok': True}
 
-@app.route("/auth", methods = ['POST'])
+
+@app.route("/auth", methods=['POST'])
 def auth_view():
     """
     Авторизовать пользователя или сообщить, что пароль не верный
@@ -81,5 +86,6 @@ def auth_view():
         return {"ok": True}
     else:
         return {"ok": False}
+
 
 app.run()
